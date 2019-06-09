@@ -1,0 +1,30 @@
+{
+    "name": "wenslim/weather",
+    "description": "A weather SDK for amap",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wenslim",
+            "email": "396902854@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Wenslim\\Weather\\": "./src/"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0",
+        "mockery/mockery": "^1.2"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wenslim\\Weather\\ServiceProvider"
+            ]
+        }
+    }
+}
