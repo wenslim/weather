@@ -91,6 +91,24 @@ class WeatherTest extends TestCase
         $this->assertSame('<hello>content</hello>', $w->getWeather('深圳', 'all', 'xml'));
     }
 
+    public function testGetLiveWeather()
+    {
+        $w = \Mockery::mock(Weather::class, ['mock-key'])->makePartial();
+        $w->expects()->getWeather('上海', 'base', 'json')->andReturn(['success' => true]);
+
+        // 断言正确传参并返回
+        $this->assertSame(['success' => true], $w->getLiveWeather('上海'));
+    }
+
+    public function testGetForecastsWeather()
+    {
+        $w = \Mockery::mock(Weather::class, ['mock-key'])->makePartial();
+        $w->expects()->getWeather('上海', 'all', 'json')->andReturn(['success' => true]);
+
+        // 断言正确传参并返回
+        $this->assertSame(['success' => true], $w->getForecastsWeather('上海'));
+    }
+
     public function testGetWeatherWithGuzzleRuntimeException()
     {
         $client = \Mockery::mock(Client::class);

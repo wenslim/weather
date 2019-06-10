@@ -15,7 +15,7 @@ $weather = new Weather($key);
 ```
 #### 获取实时天气
 ```
-$response = $weather->getWeather('上海');
+$response = $weather->getLiveWeather('上海');
 ```
 示例：
 ```
@@ -41,7 +41,7 @@ $response = $weather->getWeather('上海');
 ```
 #### 获取近期天气预报
 ```
-$response = $weather->getWeather('上海', 'all');
+$response = $weather->getForecastsWeather('上海', 'all');
 ```
 示例：
 ```
@@ -111,7 +111,7 @@ $response = $weather->getWeather('上海', 'all');
 #### 获取 XML 格式返回值
 第三个参数为返回值类型，可选 `json` 与 `xml`，默认 `json`：
 ```
-$response = $weather->getWeather('上海', 'base', 'xml');
+$response = $weather->getLiveWeather('上海', 'xml');
 ```
 示例
 ```
@@ -138,10 +138,9 @@ $response = $weather->getWeather('上海', 'base', 'xml');
 ```
 #### 参数说明
 ```
-array|string getWeather(string $city, string $type = 'base', string $format = 'json')
+array|string getLiveWeather(string $city, string $format = 'json')
 ```
 > - $city - 城市名，比如：“上海”；
-> - $type - 返回内容类型：base: 返回实况天气 / all: 返回预报天气；
 > - $format - 输出的数据格式，默认为 json 格式，当 output 设置为 “xml” 时，输出的为 XML 格式的数据。
 #### 在`laravel`中使用
 配置写在`config/services.php`中
@@ -164,14 +163,14 @@ use Wenslim\Weather\Weather;
 
 public function show(Weather $weather)
 {
-    $response = $weather->getWeather('上海');
+    $response = $weather->getLiveWeather('上海');
 }
 ```
 ##### 服务名访问
 ```
 public function show(Weather $weather)
 {
-    $response = app('weather')->getWeather('上海');
+    $response = app('weather')->getLiveWeather('上海');
 }
 ```
 #### License
