@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the wenslim/weather.
+ *
+ * (c) wenslim <396902854@qq.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Wenslim\Weather\Tests;
 
 use GuzzleHttp\Client;
@@ -14,7 +23,7 @@ use PHPUnit\Framework\TestCase;
 class WeatherTest extends TestCase
 {
     /**
-     * 检查 $type 参数
+     * 检查 $type 参数.
      */
     public function testGetWeatherWithInvalidType()
     {
@@ -59,11 +68,11 @@ class WeatherTest extends TestCase
         // 指定将会产生的行为
         $client->allows()->get('https://restapi.amap.com/v3/weather/weatherInfo', [
             'query' => [
-                'key'        => 'mock-key',
-                'city'       => '深圳',
-                'output'     => 'json',
+                'key' => 'mock-key',
+                'city' => '深圳',
+                'output' => 'json',
                 'extensions' => 'base',
-            ]
+            ],
         ])->andReturn($response);
 
         // 将 getHttpClient 方法替换为上面创建的 http client 为返回值的模拟方法
@@ -78,10 +87,10 @@ class WeatherTest extends TestCase
         $client = \Mockery::mock(Client::class);
         $client->allows()->get('https://restapi.amap.com/v3/weather/weatherInfo', [
             'query' => [
-                'key'        => 'mock-key',
-                'city'       => '深圳',
+                'key' => 'mock-key',
+                'city' => '深圳',
                 'extensions' => 'all',
-                'output'     => 'xml',
+                'output' => 'xml',
             ],
         ])->andReturn($response);
 

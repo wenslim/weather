@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the wenslim/weather.
+ *
+ * (c) wenslim <396902854@qq.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace Wenslim\Weather;
 
 use GuzzleHttp\Client;
@@ -9,6 +18,7 @@ use Wenslim\Weather\Exceptions\InvalidArgumentException;
 class Weather
 {
     protected $key;
+
     protected $guzzleOptions = [];
 
     public function __construct($key = '')
@@ -30,18 +40,18 @@ class Weather
     {
         $url = 'https://restapi.amap.com/v3/weather/weatherInfo';
 
-        if ( !in_array(strtolower($type), ['base', 'all'])) {
-            throw new InvalidArgumentException('Invalid type value(base/all): ' . $type);
+        if (!in_array(strtolower($type), ['base', 'all'])) {
+            throw new InvalidArgumentException('Invalid type value(base/all): '.$type);
         }
 
-        if ( !in_array(strtolower($format), ['xml', 'json'])) {
-            throw new InvalidArgumentException('Invalid response format: ' . $format);
+        if (!in_array(strtolower($format), ['xml', 'json'])) {
+            throw new InvalidArgumentException('Invalid response format: '.$format);
         }
 
         $query = [
-            'key'        => $this->key,
-            'city'       => $city,
-            'output'     => $format,
+            'key' => $this->key,
+            'city' => $city,
+            'output' => $format,
             'extensions' => $type,
         ];
 
