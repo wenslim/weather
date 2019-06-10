@@ -1,5 +1,8 @@
-### Weather
-基于「[高德开放平台](https://lbs.amap.com/dev/index)」的`PHP`天气信息组件
+<h1 class="center">Weather</h1>
+<p align="center">基于「[高德开放平台](https://lbs.amap.com/dev/index)」的`PHP`天气信息组件</p>
+
+[![Build Status](https://travis-ci.org/wenslim/weather.svg?branch=master)](https://travis-ci.org/wenslim/weather)
+
 #### 安装
 ```
 $ composer require wenslim/weather -vvv
