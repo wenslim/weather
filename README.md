@@ -5,6 +5,9 @@
 
 [![Build Status](https://travis-ci.org/wenslim/weather.svg?branch=master)](https://travis-ci.org/wenslim/weather)
 ![StyleCI build status](https://github.styleci.io/repos/190960988/shield)
+[![Latest Stable Version](https://poser.pugx.org/wenslim/weather/v/stable)](https://packagist.org/packages/wenslim/weather)
+[![Latest Unstable Version](https://poser.pugx.org/wenslim/weather/v/unstable)](https://packagist.org/packages/wenslim/weather)
+[![License](https://poser.pugx.org/wenslim/weather/license)](https://packagist.org/packages/wenslim/weather)
 
 #### 安装
 ```
